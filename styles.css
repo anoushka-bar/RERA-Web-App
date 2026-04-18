@@ -1,0 +1,182 @@
+/* -------------------- */
+/* GLOBAL RESET */
+/* -------------------- */
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #ffffff;
+  color: #2C2C2A;
+}
+
+/* -------------------- */
+/* MAIN PAGE */
+/* -------------------- */
+
+h2 {
+  margin: 20px;
+}
+
+/* Document list */
+.doc-list {
+  max-width: 500px;
+  margin: 20px;
+}
+
+.doc-item {
+  padding: 14px 16px;
+  border: 1px solid #E0DED6;
+  margin-bottom: 10px;
+  cursor: pointer;
+  border-radius: 10px;
+  background: #FAFAF8;
+  transition: all 0.2s ease;
+}
+
+.doc-item:hover {
+  background: #F0EFEA;
+  border-color: #D6D3C9;
+}
+
+/* -------------------- */
+/* AI BUBBLE */
+/* -------------------- */
+
+.ai-bubble {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #111;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease;
+  z-index: 1000;
+}
+
+.ai-bubble:hover {
+  transform: scale(1.05);
+}
+
+/* -------------------- */
+/* VIEWER PAGE */
+/* -------------------- */
+
+/* Top bar */
+.top-bar {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+  border-bottom: 1px solid #E0DED6;
+  background: #fff;
+}
+
+/* Buttons */
+.top-bar button {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #D3D1C7;
+  background: white;
+  cursor: pointer;
+}
+
+/* Language toggle */
+.lang-toggle button {
+  margin-left: 6px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  border: 1px solid #D3D1C7;
+  background: white;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+/* -------------------- */
+/* VIEWER LAYOUT */
+/* -------------------- */
+
+/* Main container */
+.viewer-container {
+  display: flex;
+  height: calc(100vh - 60px); /* full height minus top bar */
+}
+
+/* PDF side */
+.pdf-container {
+  width: 100%;
+  height: 100%;
+  background: #F5F4F0;
+  transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+/* PDF iframe */
+.pdf-frame {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+/* -------------------- */
+/* SUMMARY PANEL */
+/* -------------------- */
+
+
+.summary-panel {
+  width: 0;
+  height: 100%;
+  overflow: hidden;
+  background: #FFFFFF;
+  border-left: 1px solid #E0DED6;
+
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+
+  box-shadow: -4px 0 20px rgba(0,0,0,0.08);
+}
+
+/* When panel opens */
+.viewer-container.open .summary-panel {
+  width: 380px;
+  transform: translateX(0);
+  padding: 20px;
+}
+
+/* Shrink PDF when panel opens */
+.viewer-container.open .pdf-container {
+  width: calc(100% - 380px);
+}
+
+/* -------------------- */
+/* SUMMARY CONTENT */
+/* -------------------- */
+
+.summary-panel h3 {
+  margin-top: 0;
+  font-size: 18px;
+}
+
+.summary-panel p {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+/* -------------------- */
+/* POLISH */
+/* -------------------- */
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

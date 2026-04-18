@@ -1,0 +1,41 @@
+<head>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<div class="top-bar">
+  <button onclick="goBack()">Back</button>
+
+  <div class="lang-toggle">
+    <button>EN</button>
+    <button>हिं</button>
+    <button>অসম</button>
+    <button>বাং</button>
+    <button>बड़ो</button>
+  </div>
+</div>
+
+<!-- MAIN CONTAINER -->
+<div id="viewer-container" class="viewer-container">
+
+  <!-- PDF AREA -->
+  <div id="pdf-container" class="pdf-container">
+    <iframe id="pdf-frame" class="pdf-frame"></iframe>
+  </div>
+
+  <!-- SUMMARY PANEL -->
+  <div id="summary-panel" class="summary-panel">
+    <h3>Project Snapshot</h3>
+    <p><b>Floors:</b> 6</p>
+    <p><b>Authority:</b> GMC</p>
+    <p><b>Status:</b> Verified</p>
+  </div>
+
+</div>
+
+<!-- AI Bubble -->
+<div class="ai-bubble" onclick="toggleSummary()">🤖</div>
+
+<script src="viewer.js"></script>
+</body>
