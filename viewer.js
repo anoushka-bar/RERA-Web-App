@@ -4,6 +4,10 @@ const file = params.get("file");
 
 document.getElementById("pdf-frame").src = "docs/" + file;
 
+window.onload = function() {
+  document.getElementById("viewer-container").classList.add("open");
+};
+
 // Back button
 function goBack() {
   window.location.href = "index.html";
@@ -15,3 +19,5 @@ function toggleSummary() {
   const container = document.getElementById("viewer-container");
   container.classList.toggle("open");
 }
+
+// toggleSummary();
